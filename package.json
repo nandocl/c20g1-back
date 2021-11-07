@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nandocl/c20g1-back/issues"
   },
-  "homepage": "https://github.com/nandocl/c20g1-back#readme"
+  "homepage": "https://github.com/nandocl/c20g1-back#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
