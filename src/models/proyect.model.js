@@ -48,9 +48,9 @@ const ProyectSchema =  Schema({
 });
 
 ProyectSchema.methods.toJSON = function(){
-    const { _id, __v, ...proceso } = this.toObject();
-    proceso.procesoId = _id;
-    return proceso;
+    const { _id, __v, ...proyecto } = this.toObject();
+    proyecto.proyectoId = _id;
+    return proyecto;
 }
 
 module.exports = model('Proyect', ProyectSchema)

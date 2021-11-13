@@ -2,13 +2,19 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 
 const { validateData } = require('../middlewars');
-const { getProyects, postProyect, removeProyect, proyectUpdate } = require('../controllers/proyects.controller');
+const { getProyects, getProyect, postProyect, removeProyect, proyectUpdate } = require('../controllers/proyects.controller');
 const { proyectoByIdExists } = require('../helpers/req-validatos');
 
 const router = Router();
 
 //Obtener lista de proyectos por páginas
 router.get('/', getProyects);
+
+//Obtener lista de proyectos por páginas
+router.get('/:id', [
+  check('id', 'No es un ID valido').isMongoId(),
+  check('id', 'No es un ID valido').custom(proyectoByIdExists),
+], getProyect);
 
 //Guardar proyecto
 router.post('/', [
