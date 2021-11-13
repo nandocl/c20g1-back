@@ -1,7 +1,7 @@
 const Proyecto = require('../models/proyect.model');
 
 //querys = ...?limit=5&page=1
-const   getProyects = async (req, res) => {
+const   getAllProyects = async (req, res) => {
     const { limit = 5, page = 1 } = req.query;
     const query = { active: true }
     const skip = limit * (page - 1);
@@ -51,4 +51,4 @@ const proyectUpdate = async (req, res) => {
     res.send({err: false, msg: `Proyecto ${id} actualizado correctamente`});
 }
 
-module.exports = { getProyects, postProyect, removeProyect, proyectUpdate, getProyect }
+module.exports = { getAllProyects, postProyect, removeProyect, proyectUpdate, getProyect }
