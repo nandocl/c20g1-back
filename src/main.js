@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
+app.use(cors())
 
 const { dbConnection } = require('./database/config');
 
@@ -10,7 +12,7 @@ dbConnection();
 app.use(express.json());
 
 //Constantes
-const PORT = 8080;
+const PORT = 3000;
 
 //Rutas
 app.use('/proyecto', require('./routes/proyects.route'));

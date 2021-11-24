@@ -34,8 +34,8 @@ const ProyectSchema =  Schema({
         required: [true, 'Error db: Materia prima es requerida']
     },
     anotaciones:{
-        type: [{anotacionContent: String}],
-        default: []
+        type: String,
+        default: ''
     },
     archivos:{
         type: [{docName: String, docUrl: String}],

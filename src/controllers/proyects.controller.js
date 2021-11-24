@@ -30,6 +30,7 @@ const   getProyect = async (req, res) => {
 
 // body = {name, responsable, client, fechaEstimada, procesos, herramientas, insumo, materiaPrima, anotaciones, archivos}
 const postProyect = async (req, res) => {
+    console.log('posttt')
     let proyect = new Proyecto(req.body);
     await proyect.save();
     res.json({err: false, msg: `Proyecto guardado correctamente` });
