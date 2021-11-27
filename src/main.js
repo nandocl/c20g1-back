@@ -12,7 +12,7 @@ dbConnection();
 app.use(express.json());
 
 //Constantes
-const PORT = 3000;
+const PORT = process.env.PORT || 3000
 
 //Rutas
 app.get('/test', (req, res) => res.send({msg: 'Grupo 1 B20'}));
