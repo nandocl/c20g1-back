@@ -15,6 +15,7 @@ app.use(express.json());
 const PORT = 3000;
 
 //Rutas
+app.get('/test', (req, res) => res.send({msg: 'Grupo 1 B20'}));
 app.use('/proyecto', require('./routes/proyects.route'));
 
 //Inicio de servidor
