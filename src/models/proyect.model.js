@@ -18,7 +18,7 @@ const ProyectSchema =  Schema({
         required: [true, 'Error db: Fecha estimada es requerida']
     },
     procesos:{
-        type: [{type: String}],
+        type: [{name: String}],
         required: [true, 'Error db: El proceso es requerido']
     },
     herramientas: {
@@ -36,10 +36,6 @@ const ProyectSchema =  Schema({
     anotaciones:{
         type: String,
         default: ''
-    },
-    archivos:{
-        type: [{docName: String, docUrl: String}],
-        default: []
     },
     active:{
         type: Boolean,
